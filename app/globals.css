@@ -1,0 +1,68 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --primary: 217.2 91.2% 59.8%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 271.5 91.5% 65.1%;
+    --secondary-foreground: 271.5 81.3% 55.2%;
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --border: 214.3 31.8% 91.4%;
+  }
+
+  * {
+    @apply border-gray-200;
+  }
+
+  body {
+    @apply bg-white text-gray-900;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+@layer components {
+  .glass-effect {
+    @apply backdrop-blur-xs bg-white/80 border border-gray-200/50;
+  }
+
+  .gradient-primary {
+    @apply bg-gradient-to-r from-primary-500 to-secondary-500;
+  }
+
+  .card-shadow {
+    @apply shadow-lg shadow-gray-200/50;
+  }
+
+  .role-badge {
+    @apply inline-flex items-center px-3 py-1 rounded-full text-xs font-medium;
+  }
+
+  .stepper-item {
+    @apply relative flex items-center justify-center;
+  }
+
+  .notification-bell {
+    @apply relative inline-flex;
+  }
+
+  .notification-badge {
+    @apply absolute -top-1 -right-1 h-3 w-3 bg-red-500 rounded-full;
+  }
+}
+
+@layer utilities {
+  .animate-slide-in {
+    animation: slideIn 0.3s ease-out;
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.2s ease-out;
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+}
